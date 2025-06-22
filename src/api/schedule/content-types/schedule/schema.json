@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedules",
+  "info": {
+    "singularName": "schedule",
+    "pluralName": "schedules",
+    "displayName": "schedule"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isFullyBooked": {
+      "type": "boolean"
+    },
+    "date": {
+      "type": "date"
+    },
+    "rawText": {
+      "type": "string"
+    },
+    "cast": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cast.cast",
+      "inversedBy": "schedules"
+    },
+    "customID": {
+      "type": "string"
+    }
+  }
+}

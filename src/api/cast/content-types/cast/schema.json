@@ -1,0 +1,128 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casts",
+  "info": {
+    "singularName": "cast",
+    "pluralName": "casts",
+    "displayName": "Cast"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "catchCopy": {
+      "type": "string"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": true
+    },
+    "MBTI": {
+      "type": "enumeration",
+      "enum": [
+        "INTP",
+        "INFP",
+        "INFJ",
+        "ISTP",
+        "ISTJ",
+        "ISFP",
+        "ISFJ",
+        "ENTP",
+        "ENFP",
+        "ENFJ",
+        "ESTP",
+        "ESTJ",
+        "ESFP",
+        "ESFJ",
+        "ENTJ"
+      ]
+    },
+    "sexinessLevel": {
+      "type": "integer",
+      "default": 3,
+      "min": 1,
+      "max": 5
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bloodtype": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "AB",
+        "O",
+        "unknow"
+      ]
+    },
+    "SNSURL": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "component",
+      "component": "shared.skills",
+      "repeatable": true
+    },
+    "personalities": {
+      "type": "component",
+      "component": "shared.personalities",
+      "repeatable": true
+    },
+    "visualStyles": {
+      "type": "component",
+      "component": "shared.visual-styles",
+      "repeatable": true
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "cast"
+    },
+    "customID": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "stillwork": {
+      "type": "boolean",
+      "default": true
+    },
+    "QA": {
+      "type": "richtext"
+    },
+    "Managercomment": {
+      "type": "richtext"
+    },
+    "Featureintroduction": {
+      "type": "richtext"
+    },
+    "schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::schedule.schedule",
+      "mappedBy": "cast"
+    }
+  }
+}
