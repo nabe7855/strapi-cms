@@ -124,6 +124,11 @@
       "relation": "oneToMany",
       "target": "api::schedule.schedule",
       "mappedBy": "cast"
+    },
+    "GalleryItem": {
+      "type": "component",
+      "component": "shared.gallery-image",
+      "repeatable": true
     }
   }
 }

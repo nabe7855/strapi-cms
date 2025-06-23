@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-06-23T18:10:24.179Z"
+    "x-generation-date": "2025-06-23T18:43:41.362Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -3150,6 +3150,12 @@
                   "example": "string or id"
                 }
               },
+              "GalleryItem": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedGalleryImageComponent"
+                }
+              },
               "locale": {
                 "type": "string"
               },
@@ -4243,6 +4249,12 @@
                         }
                       }
                     },
+                    "GalleryItem": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SharedGalleryImageComponent"
+                      }
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -4388,6 +4400,12 @@
               }
             }
           },
+          "GalleryItem": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedGalleryImageComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -4503,6 +4521,30 @@
               "slim",
               "athlete"
             ]
+          }
+        }
+      },
+      "SharedGalleryImageComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "videoUrl": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video"
+            ]
+          },
+          "caption": {
+            "type": "string"
           }
         }
       },
@@ -5499,6 +5541,12 @@
                       }
                     }
                   }
+                }
+              },
+              "GalleryItem": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedGalleryImageComponent"
                 }
               },
               "createdAt": {
@@ -6614,6 +6662,12 @@
                       }
                     }
                   }
+                }
+              },
+              "GalleryItem": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedGalleryImageComponent"
                 }
               },
               "createdAt": {

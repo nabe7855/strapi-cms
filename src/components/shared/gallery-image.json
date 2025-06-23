@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_gallery_images",
+  "info": {
+    "displayName": "GalleryImage"
+  },
+  "options": {},
+  "attributes": {
+    "imageUrl": {
+      "type": "string"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ]
+    },
+    "caption": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
