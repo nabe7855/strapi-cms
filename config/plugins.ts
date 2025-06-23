@@ -1,13 +1,21 @@
 export default ({ env }) => {
+  const cloudName = env('CLOUDINARY_NAME');
+  const cloudKey = env('CLOUDINARY_KEY');
+  const cloudSecret = env('CLOUDINARY_SECRET');
+
   // ✅ Cloudinary 設定値のデバッグログ出力（Railwayログに出る）
   console.log("🔍 [DEBUG] Cloudinary ENV CHECK", {
-    CLOUDINARY_NAME: env('CLOUDINARY_NAME'),
-    CLOUDINARY_KEY: env('CLOUDINARY_KEY'),
-    CLOUDINARY_SECRET: env('CLOUDINARY_SECRET') ? '✅ SET' : '❌ NOT SET',
+    CLOUDINARY_NAME: cloudName,
+    CLOUDINARY_KEY: cloudKey,
+    CLOUDINARY_SECRET: cloudSecret ? '✅ SET' : '❌ NOT SET',
   });
 
+  // ❗ 万が一の null チェック（env ファイルの記述漏れ確認用）
+  if (!cloudName || !cloudKey || !cloudSecret) {
+    console.warn("⚠️ Cloudinary 環境変数が一部未設定です。画像アップロードが失敗する可能性があります。");
+  }
+
   return {
-    // Swagger ドキュメント（任意）
     documentation: {
       enabled: true,
       config: {
@@ -19,14 +27,13 @@ export default ({ env }) => {
       },
     },
 
-    // Cloudinary 設定
     upload: {
       config: {
         provider: 'cloudinary',
         providerOptions: {
-          cloud_name: env('CLOUDINARY_NAME'),
-          api_key: env('CLOUDINARY_KEY'),
-          api_secret: env('CLOUDINARY_SECRET'),
+          cloud_name: cloudName,
+          api_key: cloudKey,
+          api_secret: cloudSecret,
         },
       },
     },
