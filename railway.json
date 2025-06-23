@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "PORT": 1337
+    }
+  },
+  "deploy": {
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
