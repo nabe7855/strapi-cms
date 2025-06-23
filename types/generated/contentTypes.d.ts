@@ -386,7 +386,10 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
   attributes: {
     age: Schema.Attribute.Integer;
     bloodtype: Schema.Attribute.Enumeration<['A', 'B', 'AB', 'O', 'unknow']>;
-    catchCopy: Schema.Attribute.String;
+    catchCopy: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

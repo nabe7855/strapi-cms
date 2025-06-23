@@ -18,7 +18,8 @@
       "type": "integer"
     },
     "catchCopy": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 10
     },
     "height": {
       "type": "integer"
