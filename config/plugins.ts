@@ -2,9 +2,9 @@ export default ({ env }) => {
   const cloudName = env('CLOUDINARY_NAME');
   const cloudKey = env('CLOUDINARY_KEY');
   const cloudSecret = env('CLOUDINARY_SECRET');
-  const uploadPreset = env('UPLOAD_PRESET');
+  const uploadPreset = env('UPLOAD_PRESET'); // ※ 環境変数として取得はOK（デバッグ用）
 
-  // ✅ Cloudinary 設定値のデバッグログ出力（Railwayログに出る）
+  // ✅ Cloudinary 設定値のデバッグログ出力
   console.log("🔍 [DEBUG] Cloudinary ENV CHECK", {
     CLOUDINARY_NAME: cloudName,
     CLOUDINARY_KEY: cloudKey,
@@ -12,8 +12,8 @@ export default ({ env }) => {
     UPLOAD_PRESET: uploadPreset,
   });
 
-  // ❗ 万が一の null チェック（env ファイルの記述漏れ確認用）
-  if (!cloudName || !cloudKey || !cloudSecret || !uploadPreset) {
+  // ❗ 万が一の null チェック
+  if (!cloudName || !cloudKey || !cloudSecret) {
     console.warn("⚠️ Cloudinary 環境変数が一部未設定です。画像アップロードが失敗する可能性があります。");
   }
 
@@ -36,7 +36,7 @@ export default ({ env }) => {
           cloud_name: cloudName,
           api_key: cloudKey,
           api_secret: cloudSecret,
-          upload_preset: uploadPreset, // ✅ ここを追加
+          // ❌ upload_preset は Strapi 側では無効なので削除
         },
       },
     },
