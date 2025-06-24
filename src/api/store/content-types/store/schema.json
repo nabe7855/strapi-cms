@@ -14,9 +14,6 @@
     "name": {
       "type": "string"
     },
-    "customID": {
-      "type": "string"
-    },
     "description": {
       "type": "richtext"
     },
@@ -28,6 +25,10 @@
       "relation": "oneToMany",
       "target": "api::cast.cast",
       "mappedBy": "store"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }
