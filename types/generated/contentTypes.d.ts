@@ -440,8 +440,10 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
       > &
       Schema.Attribute.DefaultTo<3>;
     skills: Schema.Attribute.Component<'shared.skills', true>;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     SNSURL: Schema.Attribute.String;
     stillwork: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    store: Schema.Attribute.Relation<'manyToOne', 'api::store.store'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -517,6 +519,35 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     rawText: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStoreStore extends Struct.CollectionTypeSchema {
+  collectionName: 'stores';
+  info: {
+    displayName: 'Store';
+    pluralName: 'stores';
+    singularName: 'store';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    casts: Schema.Attribute.Relation<'oneToMany', 'api::cast.cast'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    customID: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    imageUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::store.store'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1035,6 +1066,7 @@ declare module '@strapi/strapi' {
       'api::cast.cast': ApiCastCast;
       'api::review.review': ApiReviewReview;
       'api::schedule.schedule': ApiScheduleSchedule;
+      'api::store.store': ApiStoreStore;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stores",
+  "info": {
+    "singularName": "store",
+    "pluralName": "stores",
+    "displayName": "Store"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "customID": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "casts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cast.cast",
+      "mappedBy": "store"
+    }
+  }
+}
