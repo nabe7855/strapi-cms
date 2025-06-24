@@ -57,16 +57,6 @@
       "min": 1,
       "max": 5
     },
-    "Image": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "bloodtype": {
       "type": "enumeration",
       "enum": [
@@ -129,6 +119,10 @@
       "type": "component",
       "component": "shared.gallery-image",
       "repeatable": true
+    },
+    "isReception": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

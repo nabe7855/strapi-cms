@@ -399,11 +399,8 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     Featureintroduction: Schema.Attribute.RichText;
     GalleryItem: Schema.Attribute.Component<'shared.gallery-image', true>;
     height: Schema.Attribute.Integer;
-    Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     isNew: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    isReception: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::cast.cast'> &
       Schema.Attribute.Private;
