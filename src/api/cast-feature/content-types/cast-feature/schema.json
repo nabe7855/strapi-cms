@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cast_features",
+  "info": {
+    "singularName": "cast-feature",
+    "pluralName": "cast-features",
+    "displayName": "Cast Feature"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cast": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cast.cast",
+      "inversedBy": "cast_features"
+    },
+    "feature_master": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::feature-master.feature-master",
+      "inversedBy": "cast_features"
+    },
+    "rating": {
+      "type": "enumeration",
+      "enum": [
+        "very_good_◎",
+        "good_〇",
+        "average_△",
+        "bad_×"
+      ]
+    },
+    "isLabelTarget": {
+      "type": "boolean"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "note": {
+      "type": "string"
+    },
+    "value_text": {
+      "type": "string"
+    },
+    "value_number": {
+      "type": "integer"
+    },
+    "value_boolean": {
+      "type": "boolean"
+    }
+  }
+}

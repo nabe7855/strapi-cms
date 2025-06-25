@@ -70,21 +70,6 @@
     "SNSURL": {
       "type": "string"
     },
-    "skills": {
-      "type": "component",
-      "component": "shared.skills",
-      "repeatable": true
-    },
-    "personalities": {
-      "type": "component",
-      "component": "shared.personalities",
-      "repeatable": true
-    },
-    "visualStyles": {
-      "type": "component",
-      "component": "shared.visual-styles",
-      "repeatable": true
-    },
     "reviews": {
       "type": "relation",
       "relation": "oneToMany",
@@ -134,6 +119,12 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "cast_features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cast-feature.cast-feature",
+      "mappedBy": "cast"
     }
   }
 }

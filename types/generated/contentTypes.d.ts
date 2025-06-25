@@ -373,6 +373,47 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCastFeatureCastFeature extends Struct.CollectionTypeSchema {
+  collectionName: 'cast_features';
+  info: {
+    displayName: 'Cast Feature';
+    pluralName: 'cast-features';
+    singularName: 'cast-feature';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cast: Schema.Attribute.Relation<'manyToOne', 'api::cast.cast'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    feature_master: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::feature-master.feature-master'
+    >;
+    is_active: Schema.Attribute.Boolean;
+    isLabelTarget: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cast-feature.cast-feature'
+    > &
+      Schema.Attribute.Private;
+    note: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Enumeration<
+      ['very_good_\u25CE', 'good_\u3007', 'average_\u25B3', 'bad_\u00D7']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    value_boolean: Schema.Attribute.Boolean;
+    value_number: Schema.Attribute.Integer;
+    value_text: Schema.Attribute.String;
+  };
+}
+
 export interface ApiCastCast extends Struct.CollectionTypeSchema {
   collectionName: 'casts';
   info: {
@@ -386,6 +427,10 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
   attributes: {
     age: Schema.Attribute.Integer;
     bloodtype: Schema.Attribute.Enumeration<['A', 'B', 'AB', 'O', 'unknow']>;
+    cast_features: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cast-feature.cast-feature'
+    >;
     catchCopy: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 10;
@@ -425,7 +470,6 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
       ]
     >;
     name: Schema.Attribute.String;
-    personalities: Schema.Attribute.Component<'shared.personalities', true>;
     publishedAt: Schema.Attribute.DateTime;
     QA: Schema.Attribute.RichText;
     reviews: Schema.Attribute.Relation<'oneToMany', 'api::review.review'>;
@@ -439,7 +483,6 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
         number
       > &
       Schema.Attribute.DefaultTo<3>;
-    skills: Schema.Attribute.Component<'shared.skills', true>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     SNSURL: Schema.Attribute.String;
     stillwork: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
@@ -447,8 +490,58 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    visualStyles: Schema.Attribute.Component<'shared.visual-styles', true>;
     weight: Schema.Attribute.Integer;
+  };
+}
+
+export interface ApiFeatureMasterFeatureMaster
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'feature_masters';
+  info: {
+    displayName: 'Feature Master';
+    pluralName: 'feature-masters';
+    singularName: 'feature-master';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cast_features: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cast-feature.cast-feature'
+    >;
+    category: Schema.Attribute.Enumeration<
+      [
+        'appearance',
+        'face',
+        'personality',
+        'play',
+        'MBTI',
+        'sexiness_level',
+        'height_range',
+        'age_range',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    is_active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    label_en: Schema.Attribute.UID;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-master.feature-master'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    priority: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.Enumeration<
+      ['Boolean', 'Enumeration', 'Number', 'SingleSelect']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1063,7 +1156,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::cast-feature.cast-feature': ApiCastFeatureCastFeature;
       'api::cast.cast': ApiCastCast;
+      'api::feature-master.feature-master': ApiFeatureMasterFeatureMaster;
       'api::review.review': ApiReviewReview;
       'api::schedule.schedule': ApiScheduleSchedule;
       'api::store.store': ApiStoreStore;

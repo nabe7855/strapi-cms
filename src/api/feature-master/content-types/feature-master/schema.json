@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_masters",
+  "info": {
+    "singularName": "feature-master",
+    "pluralName": "feature-masters",
+    "displayName": "Feature Master"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cast_features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cast-feature.cast-feature",
+      "mappedBy": "feature_master"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "appearance",
+        "face",
+        "personality",
+        "play",
+        "MBTI",
+        "sexiness_level",
+        "height_range",
+        "age_range"
+      ]
+    },
+    "label_en": {
+      "type": "uid"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Boolean",
+        "Enumeration",
+        "Number",
+        "SingleSelect"
+      ]
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
