@@ -7,7 +7,7 @@
     "displayName": "Cast Feature"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -29,7 +29,7 @@
     "is_active": {
       "type": "boolean"
     },
-    "note": {
+    "name": {
       "type": "string"
     },
     "value_text": {
@@ -41,6 +41,9 @@
     "value_boolean": {
       "type": "boolean",
       "default": false
+    },
+    "note": {
+      "type": "string"
     }
   }
 }

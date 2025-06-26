@@ -381,7 +381,7 @@ export interface ApiCastFeatureCastFeature extends Struct.CollectionTypeSchema {
     singularName: 'cast-feature';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     cast: Schema.Attribute.Relation<'manyToOne', 'api::cast.cast'>;
@@ -400,6 +400,7 @@ export interface ApiCastFeatureCastFeature extends Struct.CollectionTypeSchema {
       'api::cast-feature.cast-feature'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     note: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

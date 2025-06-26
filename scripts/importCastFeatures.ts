@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const API_URL = 'http://localhost:1337';
-const csvFilePath = path.resolve(__dirname, './cast_features_test.csv');
+const csvFilePath = path.resolve(__dirname, './プロフィール トキ.csv');
 const TOKEN = process.env.STRAPI_ADMIN_TOKEN;
 
 if (!TOKEN) {
@@ -18,6 +18,7 @@ if (!TOKEN) {
 interface CsvRow {
   cast_custom_id: string;
   feature_label_en: string;
+  name?: string;
   value_text?: string;
   value_number?: string;
   value_boolean?: string;
@@ -66,6 +67,7 @@ const importData = async () => {
             data: {
               cast: castId,
               feature_master: featureId,
+              name: row.name?.trim() || null,
               value_text: row.value_text?.trim() || null,
               value_number: row.value_number ? Number(row.value_number) : null,
               value_boolean:

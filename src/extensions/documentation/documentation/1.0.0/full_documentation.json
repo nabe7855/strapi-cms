@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-06-26T08:43:51.252Z"
+    "x-generation-date": "2025-06-26T11:11:18.541Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -5489,7 +5489,7 @@
                           "is_active": {
                             "type": "boolean"
                           },
-                          "note": {
+                          "name": {
                             "type": "string"
                           },
                           "value_text": {
@@ -5500,6 +5500,9 @@
                           },
                           "value_boolean": {
                             "type": "boolean"
+                          },
+                          "note": {
+                            "type": "string"
                           },
                           "createdAt": {
                             "type": "string",
@@ -5862,7 +5865,7 @@
               "is_active": {
                 "type": "boolean"
               },
-              "note": {
+              "name": {
                 "type": "string"
               },
               "value_text": {
@@ -5873,6 +5876,9 @@
               },
               "value_boolean": {
                 "type": "boolean"
+              },
+              "note": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -6691,7 +6697,7 @@
                     "is_active": {
                       "type": "boolean"
                     },
-                    "note": {
+                    "name": {
                       "type": "string"
                     },
                     "value_text": {
@@ -6702,6 +6708,9 @@
                     },
                     "value_boolean": {
                       "type": "boolean"
+                    },
+                    "note": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -6827,7 +6836,7 @@
           "is_active": {
             "type": "boolean"
           },
-          "note": {
+          "name": {
             "type": "string"
           },
           "value_text": {
@@ -6838,6 +6847,9 @@
           },
           "value_boolean": {
             "type": "boolean"
+          },
+          "note": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -7833,7 +7845,7 @@
                 "is_active": {
                   "type": "boolean"
                 },
-                "note": {
+                "name": {
                   "type": "string"
                 },
                 "value_text": {
@@ -7844,6 +7856,9 @@
                 },
                 "value_boolean": {
                   "type": "boolean"
+                },
+                "note": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
@@ -8863,7 +8878,7 @@
                     "is_active": {
                       "type": "boolean"
                     },
-                    "note": {
+                    "name": {
                       "type": "string"
                     },
                     "value_text": {
@@ -8874,6 +8889,9 @@
                     },
                     "value_boolean": {
                       "type": "boolean"
+                    },
+                    "note": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -9915,7 +9933,7 @@
                     "is_active": {
                       "type": "boolean"
                     },
-                    "note": {
+                    "name": {
                       "type": "string"
                     },
                     "value_text": {
@@ -9926,6 +9944,9 @@
                     },
                     "value_boolean": {
                       "type": "boolean"
+                    },
+                    "note": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -10964,7 +10985,7 @@
                       "is_active": {
                         "type": "boolean"
                       },
-                      "note": {
+                      "name": {
                         "type": "string"
                       },
                       "value_text": {
@@ -10975,6 +10996,9 @@
                       },
                       "value_boolean": {
                         "type": "boolean"
+                      },
+                      "note": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
