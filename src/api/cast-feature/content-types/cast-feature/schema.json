@@ -23,15 +23,6 @@
       "target": "api::feature-master.feature-master",
       "inversedBy": "cast_features"
     },
-    "rating": {
-      "type": "enumeration",
-      "enum": [
-        "very_good_◎",
-        "good_〇",
-        "average_△",
-        "bad_×"
-      ]
-    },
     "isLabelTarget": {
       "type": "boolean"
     },
@@ -48,7 +39,8 @@
       "type": "integer"
     },
     "value_boolean": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }

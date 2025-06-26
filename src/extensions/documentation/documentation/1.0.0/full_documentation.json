@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-06-25T11:46:28.074Z"
+    "x-generation-date": "2025-06-26T08:43:51.252Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -5483,15 +5483,6 @@
                               }
                             }
                           },
-                          "rating": {
-                            "type": "string",
-                            "enum": [
-                              "very_good_◎",
-                              "good_〇",
-                              "average_△",
-                              "bad_×"
-                            ]
-                          },
                           "isLabelTarget": {
                             "type": "boolean"
                           },
@@ -5864,15 +5855,6 @@
                   }
                 ],
                 "example": "string or id"
-              },
-              "rating": {
-                "type": "string",
-                "enum": [
-                  "very_good_◎",
-                  "good_〇",
-                  "average_△",
-                  "bad_×"
-                ]
               },
               "isLabelTarget": {
                 "type": "boolean"
@@ -6703,15 +6685,6 @@
                         }
                       }
                     },
-                    "rating": {
-                      "type": "string",
-                      "enum": [
-                        "very_good_◎",
-                        "good_〇",
-                        "average_△",
-                        "bad_×"
-                      ]
-                    },
                     "isLabelTarget": {
                       "type": "boolean"
                     },
@@ -6847,15 +6820,6 @@
                 "type": "string"
               }
             }
-          },
-          "rating": {
-            "type": "string",
-            "enum": [
-              "very_good_◎",
-              "good_〇",
-              "average_△",
-              "bad_×"
-            ]
           },
           "isLabelTarget": {
             "type": "boolean"
@@ -7862,15 +7826,6 @@
                       }
                     }
                   }
-                },
-                "rating": {
-                  "type": "string",
-                  "enum": [
-                    "very_good_◎",
-                    "good_〇",
-                    "average_△",
-                    "bad_×"
-                  ]
                 },
                 "isLabelTarget": {
                   "type": "boolean"
@@ -8901,15 +8856,6 @@
                           }
                         }
                       }
-                    },
-                    "rating": {
-                      "type": "string",
-                      "enum": [
-                        "very_good_◎",
-                        "good_〇",
-                        "average_△",
-                        "bad_×"
-                      ]
                     },
                     "isLabelTarget": {
                       "type": "boolean"
@@ -9963,15 +9909,6 @@
                         }
                       }
                     },
-                    "rating": {
-                      "type": "string",
-                      "enum": [
-                        "very_good_◎",
-                        "good_〇",
-                        "average_△",
-                        "bad_×"
-                      ]
-                    },
                     "isLabelTarget": {
                       "type": "boolean"
                     },
@@ -11020,15 +10957,6 @@
                             }
                           }
                         }
-                      },
-                      "rating": {
-                        "type": "string",
-                        "enum": [
-                          "very_good_◎",
-                          "good_〇",
-                          "average_△",
-                          "bad_×"
-                        ]
                       },
                       "isLabelTarget": {
                         "type": "boolean"

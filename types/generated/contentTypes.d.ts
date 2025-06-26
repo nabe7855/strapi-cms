@@ -402,13 +402,10 @@ export interface ApiCastFeatureCastFeature extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     note: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    rating: Schema.Attribute.Enumeration<
-      ['very_good_\u25CE', 'good_\u3007', 'average_\u25B3', 'bad_\u00D7']
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    value_boolean: Schema.Attribute.Boolean;
+    value_boolean: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     value_number: Schema.Attribute.Integer;
     value_text: Schema.Attribute.String;
   };
@@ -422,7 +419,7 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     singularName: 'cast';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     age: Schema.Attribute.Integer;
@@ -503,7 +500,7 @@ export interface ApiFeatureMasterFeatureMaster
     singularName: 'feature-master';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     cast_features: Schema.Attribute.Relation<

@@ -3,7 +3,13 @@ export default [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['http://localhost:3000'], // ←フロントエンドのURLを指定
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // ← PUTを許可
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   {

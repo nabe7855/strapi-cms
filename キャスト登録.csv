@@ -1,0 +1,2 @@
+name,age,catchCopy,height,weight,isNew,bloodtype,SNSURL,customID,stillwork,QA,Managercomment,Featureintroduction,slug
+ダン,27,芸術は爆発,166,70,TRUE,A,https://example.com,ダン,TRUE,これはテスト用のQAです。,マネージャーのコメントです。,特徴紹介のサンプルです。,dan

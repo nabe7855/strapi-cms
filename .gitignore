@@ -8,13 +8,13 @@ Icon
 .Spotlight-V100
 .Trashes
 ._*
+.idea/
+nbproject/
+.vscode/
 *.sw?
 *.swo
 *.swn
 *.out
-.idea/
-nbproject/
-.vscode/
 
 ############################
 # Windows
@@ -42,12 +42,12 @@ yarn-error.log*
 node_modules/
 .pnp.*
 .yarn/*
-!.yarn/cache
-!.yarn/unplugged
-!.yarn/patches
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+!.yarn/cache/
+!.yarn/unplugged/
+!.yarn/patches/
+!.yarn/releases/
+!.yarn/sdks/
+!.yarn/versions/
 
 ############################
 # Build Outputs
@@ -57,18 +57,23 @@ build/
 coverage/
 
 ############################
-# Strapi
+# Strapi Specific
 ############################
 .cache/
 .tmp/
-.env
-.env.*
 exports/
+public/uploads/
+!public/uploads/.gitkeep
 .strapi/
 .strapi-updater.json
 .strapi-cloud.json
-public/uploads/
-!public/uploads/.gitkeep
+
+############################
+# Environment Variables
+############################
+.env
+.env.*
+.env.local
 
 ############################
 # Database / Binaries
@@ -87,3 +92,8 @@ public/uploads/
 *.7z
 *.rar
 *.jar
+
+############################
+# Scripts & CLI Tools
+############################
+scripts/**/*.csv
