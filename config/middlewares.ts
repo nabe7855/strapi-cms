@@ -1,4 +1,3 @@
-// config/middlewares.ts
 export default [
   'strapi::logger',
   'strapi::errors',
@@ -6,8 +5,11 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000'], // ←フロントエンドのURLを指定
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // ← PUTを許可
+      origin: [
+        'http://localhost:3000', // 開発用
+        'https://premium-project-alpha.vercel.app', // 本番用（←追加）
+      ],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     },
   },
   'strapi::poweredBy',
