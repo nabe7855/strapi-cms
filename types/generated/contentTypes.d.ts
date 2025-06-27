@@ -439,7 +439,6 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     customID: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    Featureintroduction: Schema.Attribute.RichText;
     GalleryItem: Schema.Attribute.Component<'shared.gallery-image', true>;
     height: Schema.Attribute.Integer;
     isNew: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
@@ -447,7 +446,6 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::cast.cast'> &
       Schema.Attribute.Private;
-    Managercomment: Schema.Attribute.RichText;
     MBTI: Schema.Attribute.Enumeration<
       [
         'INTP',
@@ -469,7 +467,6 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     >;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    QA: Schema.Attribute.RichText;
     reviews: Schema.Attribute.Relation<'oneToMany', 'api::review.review'>;
     schedules: Schema.Attribute.Relation<'oneToMany', 'api::schedule.schedule'>;
     sexinessLevel: Schema.Attribute.Integer &
@@ -485,6 +482,10 @@ export interface ApiCastCast extends Struct.CollectionTypeSchema {
     SNSURL: Schema.Attribute.String;
     stillwork: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     store: Schema.Attribute.Relation<'manyToOne', 'api::store.store'>;
+    therapist_qas: Schema.Attribute.Component<
+      'shared.therapist-introduction',
+      true
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

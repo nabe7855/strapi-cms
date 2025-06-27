@@ -85,15 +85,6 @@
       "type": "boolean",
       "default": true
     },
-    "QA": {
-      "type": "richtext"
-    },
-    "Managercomment": {
-      "type": "richtext"
-    },
-    "Featureintroduction": {
-      "type": "richtext"
-    },
     "schedules": {
       "type": "relation",
       "relation": "oneToMany",
@@ -125,6 +116,11 @@
       "relation": "oneToMany",
       "target": "api::cast-feature.cast-feature",
       "mappedBy": "cast"
+    },
+    "therapist_qas": {
+      "type": "component",
+      "component": "shared.therapist-introduction",
+      "repeatable": true
     }
   }
 }

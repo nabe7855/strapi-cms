@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_therapist_introductions",
+  "info": {
+    "displayName": "qa-answer"
+  },
+  "options": {},
+  "attributes": {
+    "label_ja": {
+      "type": "string"
+    },
+    "label_en": {
+      "type": "string"
+    },
+    "type_value": {
+      "type": "enumeration",
+      "enum": [
+        "manager_comment",
+        "interview",
+        "features",
+        "qa"
+      ]
+    },
+    "answer_text": {
+      "type": "richtext"
+    },
+    "sort_order": {
+      "type": "integer"
+    },
+    "type_label": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "config": {}
+}

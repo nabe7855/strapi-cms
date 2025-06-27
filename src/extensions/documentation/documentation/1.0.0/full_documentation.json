@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-06-26T11:11:18.541Z"
+    "x-generation-date": "2025-06-27T04:27:29.774Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -4614,15 +4614,6 @@
               "stillwork": {
                 "type": "boolean"
               },
-              "QA": {
-                "type": "string"
-              },
-              "Managercomment": {
-                "type": "string"
-              },
-              "Featureintroduction": {
-                "type": "string"
-              },
               "schedules": {
                 "type": "array",
                 "items": {
@@ -4672,6 +4663,12 @@
                     }
                   ],
                   "example": "string or id"
+                }
+              },
+              "therapist_qas": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
                 }
               },
               "locale": {
@@ -4900,15 +4897,6 @@
                     },
                     "stillwork": {
                       "type": "boolean"
-                    },
-                    "QA": {
-                      "type": "string"
-                    },
-                    "Managercomment": {
-                      "type": "string"
-                    },
-                    "Featureintroduction": {
-                      "type": "string"
                     },
                     "schedules": {
                       "type": "array",
@@ -5558,6 +5546,12 @@
                         }
                       }
                     },
+                    "therapist_qas": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
+                      }
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -5680,15 +5674,6 @@
           "stillwork": {
             "type": "boolean"
           },
-          "QA": {
-            "type": "string"
-          },
-          "Managercomment": {
-            "type": "string"
-          },
-          "Featureintroduction": {
-            "type": "string"
-          },
           "schedules": {
             "type": "array",
             "items": {
@@ -5738,6 +5723,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "therapist_qas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
             }
           },
           "createdAt": {
@@ -5825,6 +5816,41 @@
           },
           "caption": {
             "type": "string"
+          }
+        }
+      },
+      "SharedTherapistIntroductionComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "label_ja": {
+            "type": "string"
+          },
+          "label_en": {
+            "type": "string"
+          },
+          "type_value": {
+            "type": "string",
+            "enum": [
+              "manager_comment",
+              "interview",
+              "features",
+              "qa"
+            ]
+          },
+          "answer_text": {
+            "type": "string"
+          },
+          "sort_order": {
+            "type": "integer"
+          },
+          "type_label": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
           }
         }
       },
@@ -6361,15 +6387,6 @@
               "stillwork": {
                 "type": "boolean"
               },
-              "QA": {
-                "type": "string"
-              },
-              "Managercomment": {
-                "type": "string"
-              },
-              "Featureintroduction": {
-                "type": "string"
-              },
               "schedules": {
                 "type": "array",
                 "items": {
@@ -6764,6 +6781,12 @@
                       }
                     }
                   }
+                }
+              },
+              "therapist_qas": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
                 }
               },
               "createdAt": {
@@ -7464,15 +7487,6 @@
                     "stillwork": {
                       "type": "boolean"
                     },
-                    "QA": {
-                      "type": "string"
-                    },
-                    "Managercomment": {
-                      "type": "string"
-                    },
-                    "Featureintroduction": {
-                      "type": "string"
-                    },
                     "schedules": {
                       "type": "array",
                       "items": {
@@ -7674,6 +7688,12 @@
                             "type": "string"
                           }
                         }
+                      }
+                    },
+                    "therapist_qas": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
                       }
                     },
                     "createdAt": {
@@ -8542,15 +8562,6 @@
               "stillwork": {
                 "type": "boolean"
               },
-              "QA": {
-                "type": "string"
-              },
-              "Managercomment": {
-                "type": "string"
-              },
-              "Featureintroduction": {
-                "type": "string"
-              },
               "schedules": {
                 "type": "array",
                 "items": {
@@ -8945,6 +8956,12 @@
                       }
                     }
                   }
+                }
+              },
+              "therapist_qas": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
                 }
               },
               "createdAt": {
@@ -9597,15 +9614,6 @@
               "stillwork": {
                 "type": "boolean"
               },
-              "QA": {
-                "type": "string"
-              },
-              "Managercomment": {
-                "type": "string"
-              },
-              "Featureintroduction": {
-                "type": "string"
-              },
               "schedules": {
                 "type": "array",
                 "items": {
@@ -10000,6 +10008,12 @@
                       }
                     }
                   }
+                }
+              },
+              "therapist_qas": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
                 }
               },
               "createdAt": {
@@ -10649,15 +10663,6 @@
                 "stillwork": {
                   "type": "boolean"
                 },
-                "QA": {
-                  "type": "string"
-                },
-                "Managercomment": {
-                  "type": "string"
-                },
-                "Featureintroduction": {
-                  "type": "string"
-                },
                 "schedules": {
                   "type": "array",
                   "items": {
@@ -11052,6 +11057,12 @@
                         }
                       }
                     }
+                  }
+                },
+                "therapist_qas": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SharedTherapistIntroductionComponent"
                   }
                 },
                 "createdAt": {
